@@ -1,0 +1,198 @@
+/* Estilos gerais para formulários */
+.lm-contact-form,
+.lm-newsletter-form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Grid para campos */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* Grupos de campos */
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Campos de entrada */
+.lm-contact-form input[type="text"],
+.lm-contact-form input[type="email"],
+.lm-contact-form input[type="tel"],
+.lm-contact-form select,
+.lm-contact-form textarea,
+.lm-newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.lm-contact-form input[type="text"]:focus,
+.lm-contact-form input[type="email"]:focus,
+.lm-contact-form input[type="tel"]:focus,
+.lm-contact-form select:focus,
+.lm-contact-form textarea:focus,
+.lm-newsletter-form input[type="email"]:focus {
+    outline: none;
+    border-color: #0073aa;
+    box-shadow: 0 0 5px rgba(0,115,170,0.2);
+}
+
+/* Botões */
+.lm-contact-form button,
+.lm-newsletter-form button {
+    background-color: #0073aa;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.lm-contact-form button:hover,
+.lm-newsletter-form button:hover {
+    background-color: #005177;
+}
+
+/* Newsletter específico */
+.lm-newsletter-form form {
+    display: flex;
+    gap: 10px;
+}
+
+.lm-newsletter-form input[type="email"] {
+    flex: 1;
+}
+
+@media (max-width: 480px) {
+    .lm-newsletter-form form {
+        flex-direction: column;
+    }
+    
+    .lm-newsletter-form button {
+        width: 100%;
+    }
+}
+
+/* Checkbox group */
+.checkbox-group {
+    margin-top: 20px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.checkbox-item label {
+    margin: 0;
+    font-weight: normal;
+}
+
+/* Campos obrigatórios */
+.form-group label[for="nome_completo"]::after,
+.form-group label[for="email"]::after,
+.form-group label[for="telefone"]::after,
+.form-group label[for="tipo_contato"]::after,
+.form-group label[for="departamento"]::after {
+    content: " *";
+    color: #dc3232;
+}
+
+/* Mensagens de erro */
+.lm-error {
+    color: #dc3232;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .lm-contact-form,
+    .lm-newsletter-form {
+        padding: 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .lm-contact-form input[type="text"],
+    .lm-contact-form input[type="email"],
+    .lm-contact-form input[type="tel"],
+    .lm-contact-form select,
+    .lm-contact-form textarea,
+    .lm-newsletter-form input[type="email"] {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .lm-contact-form button,
+    .lm-newsletter-form button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .lm-newsletter-form form {
+        flex-direction: column;
+    }
+    
+    .lm-newsletter-form button {
+        width: 100%;
+    }
+}
+
+/* Mensagens de feedback */
+.lm-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.lm-message.success {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}
+
+.lm-message.error {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+}
+
+.lm-message.info {
+    background-color: #d9edf7;
+    color: #31708f;
+    border: 1px solid #bce8f1;
+}
